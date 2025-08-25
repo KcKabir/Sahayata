@@ -1,0 +1,21 @@
+<%- include("partials/head", { title: "Volunteer" }) %>
+
+<section class="volunteer">
+  <h1>Become a Volunteer</h1>
+  <p>Join hands with us to bring change.</p>
+
+  <form action="/volunteer" method="post">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="skills">Skills</label>
+    <input type="text" id="skills" name="skills">
+    <br>
+    <label for="availability">Availability</label>
+    <input type="text" id="availability" name="availability">
+    <br>
+    <button type="submit" class="btn">Join Us</button>
+  </form>
+</section>
+
+<%- include("partials/footer") %>

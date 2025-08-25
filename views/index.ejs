@@ -1,0 +1,82 @@
+<%- include("partials/head", { title: "Home" }) %>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Connect. Work. Earn.</h1>
+    <p>Bringing workers and employers together.</p>
+    <div class="hero-buttons">
+      <a href="/work" class="btn1">Find Work</a>
+      <a href="/hire" class="btn secondary">Hire Workers</a>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works">
+  <h2 class="hk433">How Sahayata Works</h2>
+  <div class="steps">
+    <div class="step">
+      <h3>For Workers</h3>
+      <p>Browse jobs, apply easily, and get paid fairly.</p>
+    </div>
+    <div class="step">
+      <h3>For Employers</h3>
+      <p>Post jobs quickly and find skilled workers near you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="skills">
+  <h2>Popular Skills</h2>
+  <div class="skills-grid">
+    <% popularSkills.forEach(skill => { %>
+      <div class="skill-card">
+        <span class="icon"><%= skill.icon %></span>
+        <p><%= skill.label %></p>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<section class="latest-jobs">
+  <h2 class="abc">Latest Job Opportunities</h2>
+  <div class="job-list">
+    <% latestJobs.forEach(job => { %>
+      <div class="job-card">
+        <h3><a href="/jobs/<%= job.id %>"><%= job.title %></a></h3>
+        <p><strong>Location:</strong> <%= job.location %></p>
+        <p><strong>Pay:</strong> <%= job.pay %></p>
+        <p><strong>Duration:</strong> <%= job.duration %></p>
+        <p><%= job.description %></p>
+        <div class="tags">
+          <% job.tags.forEach(tag => { %>
+            <span class="tag"><%= tag %></span>
+          <% }) %>
+        </div>
+        <p class="posted"><%= job.posted %></p>
+      </div>
+    <% }) %>
+  </div>
+  <div class="more-jobs">
+    <a href="/jobs" class="btn">View All Jobs</a>
+  </div>
+</section>
+
+<section class="get-started">
+  <h2>Get Started in 3 Simple Steps</h2>
+  <div class="steps">
+    <div class="step">
+      <h3>1. Browse & Apply</h3>
+      <p>Find jobs that match your skills and apply instantly.</p>
+    </div>
+    <div class="step">
+      <h3>2. Review Applications</h3>
+      <p>Employers can review worker profiles and hire quickly.</p>
+    </div>
+    <div class="step">
+      <h3>3. Start Working & Get Paid</h3>
+      <p>Begin your work, complete tasks, and earn securely.</p>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer") %>
